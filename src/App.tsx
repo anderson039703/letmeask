@@ -1,10 +1,19 @@
-import  {Button}  from './components/Button'
+import {BrowserRouter, Route} from 'react-router-dom'
+
+import { Home } from './pages/Home';
+import { NewHome } from "./pages/NewHome";
+
+import {AuthContextProvider} from './contexts/AuthContext'
 
 function App() {
+
   return (
-    <div>
-      <Button/>
-    </div>
+    <BrowserRouter>
+      <AuthContextProvider>
+        <Route path="/" exact component={Home}/>
+        <Route path="/rooms/new" component={NewHome}/>
+      </AuthContextProvider>
+    </BrowserRouter>
   );
 }
 
