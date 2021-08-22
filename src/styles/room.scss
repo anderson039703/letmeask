@@ -109,3 +109,62 @@
     }
   }
 }
+
+@media (min-width: 440px) and (max-width: 820px){
+  #page-room { 
+      
+    main{
+      .room-title {
+        margin: 32px 5% 24px;
+      }
+      form{
+        margin-bottom: 5%;
+        textarea{
+          width: 90%;
+          margin: 5%;
+        }
+        .form-footer{
+          margin: 5%;
+        }
+      } 
+    }
+    .question{
+      margin: 5%;
+    }
+  }
+}
+
+@media (max-width: 440px){
+  #page-room {
+    header{
+      .content{
+        flex-direction: column;
+      }
+      .content > div{
+        flex-direction: column;
+      }
+    } 
+      
+    main{
+      .room-title {
+        flex-direction: column;
+        margin: 24px 0 24px;
+      }
+      form{
+        margin-bottom: 5%;
+        textarea{
+          width: 93%;
+          margin: 3%;
+        }
+        .form-footer{
+          flex-direction: column;
+          margin-top: 10px;
+          height: 100px;
+        }
+      } 
+    }
+    .question{
+      margin: 3%;
+    }
+  }
+}

@@ -16,6 +16,7 @@
     padding: 120px 80px;
 
     img {
+      margin-left: 18%;
       max-width: 320px;
     }
 
@@ -143,4 +144,13 @@
     }
   }
 
+}
+
+@media (max-width: 678px){
+  #page-auth{
+    aside{
+      display: none; 
+    }
+  }
+  
 }
