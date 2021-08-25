@@ -44,10 +44,16 @@ export function AdminRoom() {
     })
   }
 
-  async function handleHighlightQuestion(questionId: string) {
-    await database.ref(`rooms/${roomId}/question/${questionId}`).update({
-      isHighlighted: true,
-    })
+  async function handleHighlightQuestion(questionId: string, isHighlighted: boolean) {
+    if(!isHighlighted){
+      await database.ref(`rooms/${roomId}/question/${questionId}`).update({
+        isHighlighted: true,
+      })
+    }else{
+      await database.ref(`rooms/${roomId}/question/${questionId}`).update({
+        isHighlighted: false,
+      })
+    }
   }
 
 
@@ -70,7 +76,7 @@ export function AdminRoom() {
         </div>
         
         <div className="question-list">
-          {questions.map( question => {
+          {questions.map( question => {                    
             return(
               <Question
                 key={question.id}
@@ -89,7 +95,7 @@ export function AdminRoom() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleHighlightQuestion(question.id)}
+                      onClick={() => handleHighlightQuestion(question.id, question.isHighlighted)}
                     >
                       <img src={answerImg} alt="Remover pergunta" />
                     </button>
